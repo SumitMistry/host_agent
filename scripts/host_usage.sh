@@ -23,10 +23,11 @@ cpu_kernel=$(vmstat -w | tail -1 | awk '{print $14}')
 
 cpu_ideal=$(vmstat -w | tail -1 | awk '{print $15}')
 
+idhost=$(cat ~/variable_host_id)
 # Step-2 constructing insert statement
 
 set_insert_data=$(cat <<-END
-INSERT into host_usage ("timestamp", host_id, memory_free,cpu_ideal, cpu_kernel, disk_io, disk_available) values ('$timestamp', $host_id, $memory_free,  $cpu_ideal,  $cpu_kernel, $no_disk_io, $diskmb_avail ) ;
+INSERT into host_usage ("timestamp", host_id, memory_free,cpu_ideal, cpu_kernel, disk_io, disk_available) values ('$timestamp', $idhost, $memory_free,  $cpu_ideal,  $cpu_kernel, $no_disk_io, $diskmb_avail ) ;
 END
 )
 

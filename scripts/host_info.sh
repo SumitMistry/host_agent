@@ -49,7 +49,6 @@ sleep 1
 
 host_id=`psql -h localhost -U postgres host_agent -c  "select id from host_info where hostname='${hostname}'" | tail -n 3 | head -n 1 |  xargs`
 
-##host_id=$(cat ~/host_id)
 
 
 echo $host_id > ~/variable_host_id
