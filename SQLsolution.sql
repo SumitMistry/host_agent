@@ -1,6 +1,7 @@
 ------
 A-1
 
+
 SELECT cpu_number,host_id, total_mem,
 FROM host_info
 GROUP BY host_id
@@ -14,3 +15,4 @@ FROM	host_info
 	INNER JOIN host_usage ON host_usage.host_id = host_info.id
 GROUP BY five_min_interval, id;
 
+----
