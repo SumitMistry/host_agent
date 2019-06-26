@@ -15,4 +15,5 @@ FROM	host_info
 	INNER JOIN host_usage ON host_usage.host_id = host_info.id
 GROUP BY five_min_interval, id;
 
-----
+---- 
+
